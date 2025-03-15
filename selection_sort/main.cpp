@@ -2,23 +2,26 @@
 using namespace std;
 
 void selectionSort(int a[], int n) {
-    for (int i = 0; i < n - 1; i++) {
+    for (int i = 0; i <= n - 2; i++) {
         int minIndex = i;
-        for (int j = i + 1; j < n; j++) {  
+        for (int j = i ; j <= n-1; j++) {  
             if (a[j] < a[minIndex]) {
                 minIndex = j;
             }
         }
-        if (minIndex != i) {
-            swap(a[i], a[minIndex]);
-        }
+       int temp = a[minIndex];
+       a[minIndex] = a[i];
+       a[i] = temp; 
     }
 }
 
 int main() {
-    int a[] = {5, 64, 3, 5, 65, 76, 8, 77, 5};
-    int n = sizeof(a) / sizeof(a[0]); 
-
+    int n;
+    cin >> n;
+    int a[n];
+    for(int i=0;i<n;i++){
+        cin >> a[i];
+    }
     selectionSort(a, n);
 
     
@@ -28,4 +31,4 @@ int main() {
     cout << endl;
 
     return 0;
-}
+ }

@@ -1,0 +1,20 @@
+OOP features :-
+
+1.class
+2.object
+3.jnheritance
+4.polymorphism
+5.encapsulation
+6.Abstraction
+
+
+what is class:- class is a collection of object and it doesnot take any space on memory, class is also called as blueprint/logical entity.
+           
+
+                               class
+		pre-defined             User defined
+		1.scanner               dog
+		2.consol                A
+		3.system                test
+		4.string                Demo
+
