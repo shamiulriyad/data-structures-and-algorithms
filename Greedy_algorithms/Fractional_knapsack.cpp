@@ -1,7 +1,4 @@
-#include<algorithm>
-#include<utility>
-#include<vector>
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 typedef pair<int,int>PII;
 vector<PII>v;
