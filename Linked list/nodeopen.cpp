@@ -19,7 +19,7 @@ Node* create_node(int item, Node* next) {
 
 int main() {
     Node *n;
-    n=create_node(10, NULL);
+    n=create_node(10,NULL);
     cout << n->data <<endl;
     
 
