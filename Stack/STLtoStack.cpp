@@ -10,6 +10,9 @@ int main(){
     stack.push(60);
     stack.push(70);
     stack.pop();
+    stack.top();
+    cout << stack.size()<< endl;
+    cout << stack.top()<< endl;
     stack.pop();
     stack.pop();
     cout << stack.size();
