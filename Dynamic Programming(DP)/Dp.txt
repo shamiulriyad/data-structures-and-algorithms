@@ -1,0 +1,17 @@
+<<<<<<<<<<<<<<<<DP>>>>>>>>>>>>>
+
+1.tabulation -----> bottom up Dp (start 0 to n)
+2.memoization ----> top down dp (start n to 0)
+
+
+memorization  ----------------> tabulation
+ 
+
+tc                                 tc
+sc                                 sc
+
+fibbonacci---> 
+
+
+
+
