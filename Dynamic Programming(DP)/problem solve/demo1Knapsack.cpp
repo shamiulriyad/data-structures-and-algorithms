@@ -47,7 +47,9 @@ void printPTable(int r, int c){
 
 }
 
-int Knapsack(int C, int i){
+
+int Knapsack(int C, int i){   
+
     if(C==0 || i==0){
         return 0;
     }
@@ -101,6 +103,7 @@ void printItems(int C, int i){
     }
 
 }
+
 
 
 int main(){
