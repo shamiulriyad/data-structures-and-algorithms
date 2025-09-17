@@ -32,7 +32,7 @@ void solve(int tc)
     }
      cin >> q;
 
-    for(i = 0; i < q; i++)
+    for(int i = 0; i < q; i++)
     {
         cin >>u>>v;
 

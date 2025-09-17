@@ -1,9 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
-vector<int>graph[100];
+
 int main(){
+    vector<int>graph[100];
     int node,edge;
     cin >> node >> edge;
+   // vector<int>graph[100];
     for(int i=0;i<edge;i++){
         int u,v;
         cin >> u >> v;
