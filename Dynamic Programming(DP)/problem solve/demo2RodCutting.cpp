@@ -48,7 +48,7 @@ int RodCutting(int L){
         return memo[L];
     }
 
-    int maxValue = INT_MIN;
+    int maxValue = INT64_MIN;
     int maxValueLength;
     for(int i=1;i<=L;i++){
         int value = P[i]+RodCutting(L-i);

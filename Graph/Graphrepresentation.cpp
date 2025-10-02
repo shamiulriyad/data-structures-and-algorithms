@@ -37,6 +37,8 @@ Edges are:
 Final Adjacency Matrix
 
 	0	1	2	3	4
+    
+
 0	0	1	1	0	0
 1	0	0	1	1	0
 2	0	0	0	0	1
@@ -64,16 +66,16 @@ int main(){
     for(int i=0;i<edges;i++){
 
         cin >> u >> v;
-        adjAat[u][v]=1;
+        adjAat[u][v]=1;  
         adjAat[v][u]=1;
         
     }
-
     for(int i=0;i<node;i++){
         for(int j=0;j<node;j++){
             cout << adjAat[i][j] << " ";
         }
         cout << endl;
-    }
+    }  
+} 
 
-}
+ 

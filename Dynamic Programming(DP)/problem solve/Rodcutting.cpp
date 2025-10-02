@@ -1,76 +1,97 @@
 #include<bits/stdc++.h>
 
 using namespace std;
-int length[100];
-int price[100];
-int memo[100][100];
 
 
-void intializationmemo(int r,int c){
-    for(int i=0;i<=r;i++){
-        for(int j=0;j<=c;j++){
-            if(i==0|| j==0){
-                memo[i][j]=0;
-            }
-            else {
-                memo[i][j]=-1;
-            }
+int p[100];
+//int price[100];
 
-        }
-    }  
-
-}
-
-
-
-void printmemo(int r, int c){
-    cout << "***************memo*******************" << endl;
-    for(int i=0;i<=r;i++){
-        for(int j=0;j<=c;j++){
-            cout << memo[i][j] << "\t" << endl;
-        }
-        cout << endl;
+int memo[100];
+int ptable[50];
+void intiazationmemo(int l){
+    memo[0]=0;
+    for(int i=0;i<=l;i++){
+        memo[i]=-1;
     }
-    cout << "\n********************************" << endl;
+}
 
+
+void printmemo(int l){
+    cout << "***************************memo*************************"<< endl;
+    for(int i=0;i<=l;i++){
+        cout << memo[i] << " ";
+    }
+    cout << "\n*********************memo*****************" << endl;
+}
+
+void print_ptable(int l){
+    cout << "************************" << endl;
+    for(int i=0;i<=l;i++){
+        cout<< ptable[i] << " ";
+    }
+    cout << "\n*****************************" << endl;
+}
+
+void bottomup(int l){
+
+
+for(int i = 1; i <= l; i++){         // i = current rod length
+    for(int j = 1; j <= i; j++){     // j = first cut length
+        if(p[j] + memo[i-j] > memo[i]){
+            memo[i] = p[j] + memo[i-j];  // max revenue
+            ptable[i] = j;                // best cut
+        }
+    }
+}
 }
 
 
 
-int rodcutting(int rodlength,int items){
-    if(rodlength==0 || items==0){
+void printcuts(int l){
+    if(l==0) return;
+    cout << ptable[l] << "m was taken" << endl;
+    printcuts(l-ptable[l]);
+}
+
+
+
+int rodcutting(int l){
+    if(l==0){
         return 0;
     }
-    int nottaken;
-    int taken;
-    nottaken=0+rodcutting(rodlength,items-1);
-    if(rodlength>=length[items]){
-        taken=price[items]+rodcutting(rodlength-length[items],items-1);
+    if(memo[l]!=-1){
+        return memo[l];
     }
-    else{
-        taken=0;
+    int maxvalue=INT_MIN;
+  int maxlength;
+    for(int i=1;i<=l;i++){
+        int value=p[i]+rodcutting(l-i);
+        if(value>maxvalue){
+            maxvalue=value;
+          maxlength=i;
+        }
     }
-    //return max(taken,nottaken);
+    ptable[l]=maxlength;
+    memo[l]=maxvalue;
+    return maxvalue;
 }
 
-int main(){
-    int rodlength, items;
-    cout<<"enter the length of rod :" << endl;
-    cin >> rodlength;
-    cout<< "enter the number of item: "<< endl;
-    cin >> items;
-    cout << "enter the length of rod index" << endl;
-    for(int i=1;i<=items;i++){
-        cin >> length[i];
-    }
-    cout << "enter the price of rod index:" << endl;
-    for(int i=1;i<=items;i++){
-        cin >> price[i];
-    }
-    cout << "the maximum price is :" << rodcutting(rodlength,items) << endl;
-    intializationmemo(items,rodlength);
-    printmemo(items,rodlength);
-    return 0;
 
+int main(){
+    int l;
+    cin >> l;
+    for(int i=1;i<=l;i++){
+        cin >> p[i];
+    }
+    
+   
+   intiazationmemo(l);
+    int result = rodcutting(l);
+
+    cout << "Max Revenue: " << result << endl;
+    printmemo(l);
+    print_ptable(l);
+    cout << "Cuts taken:" << endl;
+    printcuts(l);
 
 }

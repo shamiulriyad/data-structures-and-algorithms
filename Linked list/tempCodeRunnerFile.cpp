@@ -1,0 +1,3 @@
+
+        insert(head, val);
+    }
