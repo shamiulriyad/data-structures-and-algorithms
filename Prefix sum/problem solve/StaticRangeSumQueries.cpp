@@ -1,7 +1,3 @@
- // problem link :  https://www.spoj.com/problems/CSUMQ/
-
-
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -24,11 +20,12 @@ void solve(int tc)
      while(q--){
         long long i,j;
         cin >> i >> j;
+        i--;j--;
         if(i==0){
-            cout << pre[j] << endl;
+            cout << pre[j] <<'\n' <<  endl;
         }
         else{
-            cout << pre[j]-pre[i-1] << endl;
+            cout << pre[j]-pre[i-1] << '\n' <<  endl;
         }
      }
    
@@ -45,7 +42,7 @@ signed main()
     {
         solve(tc);
         
-        cout << endl;
+     //   cout << endl;
     }
 
     return 0;
