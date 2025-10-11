@@ -4,13 +4,21 @@ using namespace std;
 vector<int> graph[100];
 bool visited[100];
 
-void dfs(int u) {
-    visited[u] = true;
-    cout << u << " ";
+void dfs(int sourse) {
+    stack<int>s;
+    visited[sourse] = true;
+    s.push(sourse);
+    while(!s.empty()){
+        int u=s.top();
+        s.pop();
 
-    for(int v : graph[u]) {
-        if(!visited[v]) {
-            dfs(v);
+        cout << u << " ";
+
+        for(int v:graph[u]){
+            if(!visited[v]){
+                visited[v]=true;
+                s.push(v);
+            }
         }
     }
 }
@@ -31,3 +39,18 @@ int main() {
 
     return 0;
 }
+/*
+
+6 7
+1 2
+1 3
+2 4
+2 5
+3 5
+4 6
+5 6
+1
+
+
+
+*/

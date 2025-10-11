@@ -29,3 +29,23 @@ int main() {
 
     cout << "Total activities selected: " << cnt << endl;
 }
+
+
+/*
+5
+ToyStory 7 10
+Incredibles 5 9
+Avengers 2 4
+Batman 0 1
+Matrix 3 6
+
+*/
+
+/*
+
+0 1
+2 4
+5 9
+Total activities selected: 3
+
+*/
