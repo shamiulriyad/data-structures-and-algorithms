@@ -1,7 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
-vector<int>graph[100];
+vector< int> graph[100];
+
 bool visited[100];
+
 void bfs(int sourse){
     queue<int>q;
     visited[sourse]=true;
@@ -11,28 +13,37 @@ void bfs(int sourse){
         int u=q.front();
         q.pop();
         cout << u << " ";
-        for(int v: graph[u]){
+
+        for(int v:graph[u]){
             if(!visited[v]){
                 visited[v]=true;
                 q.push(v);
             }
         }
     }
-    cout << endl;
+
 
 }
+
 int main(){
-    int node,edge;
-    cin >> node >> edge;
-    for(int i=0;i<edge;i++){
+    // int n;
+    // cin >> n;
+      int u,v;
+        cin >> u >>v;
+    for(int i=0;i<v;i++){
         int u,v;
-        cin >> u >> v;
+        cin >> u >>v;
         graph[u].push_back(v);
         graph[v].push_back(u);
     }
-    
-    int sourse=1;
+    int sourse;
     cin >> sourse;
+
     bfs(sourse);
-   
+
+
 }
+
+
+
+

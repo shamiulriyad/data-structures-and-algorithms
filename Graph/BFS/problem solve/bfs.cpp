@@ -2,37 +2,43 @@
 using namespace std;
 vector<int>graph[100];
 bool visited[100];
+
 void bfs(int sourse){
     queue<int>q;
     visited[sourse]=true;
-    q.push(sourse);
+    q.push_back(u);
 
     while(!q.empty()){
         int u=q.front();
         q.pop();
-        cout << u << " ";
-        for(int v: graph[u]){
+        cout << u << endl;
+        for(v:graph[u]){
             if(!visited[v]){
                 visited[v]=true;
-                q.push(v);
+                q.push_back(v);
+
+
             }
+
         }
+        //cout 
+
     }
     cout << endl;
 
 }
+
 int main(){
-    int node,edge;
-    cin >> node >> edge;
-    for(int i=0;i<edge;i++){
-        int u,v;
-        cin >> u >> v;
+    int n,vertex,edge;
+    cin >> n;
+    for(int i=0;i<n;i++){
+        cin >> vertex >> edge;
         graph[u].push_back(v);
         graph[v].push_back(u);
+
     }
-    
-    int sourse=1;
+    int sourse;
+
     cin >> sourse;
     bfs(sourse);
-   
 }
