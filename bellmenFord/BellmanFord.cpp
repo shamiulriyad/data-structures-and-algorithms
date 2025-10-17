@@ -32,7 +32,7 @@ void printPath(int v){
 
 void BellmanFord(vector <Edge> edgeList, int V, int E, int s){
     for(int v=1;v<=V;v++){
-        dist[v]=INT_MAX;
+        dist[v]=1e9;
         parent[v] = -1;
     }
     dist[s]=0;

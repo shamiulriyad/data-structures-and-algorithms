@@ -65,11 +65,11 @@ void Kruskal(vector <Edge> edgeList, int V, int E){
         //int ans= w*w;
 
     }
-    int ans =0;
-    for(Edge e : selectedEdges){
-        ans=w*w;
-    }
-    cout << ans;
+    // int ans =0;
+    // for(Edge e : selectedEdges){
+    //     ans=w*w;
+    // }
+    // cout << ans;
    
 
 
